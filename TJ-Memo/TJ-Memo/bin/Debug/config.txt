@@ -1,0 +1,1 @@
+Provider=SQLNCLI11.1;Data Source=LAPTOP-7PM0DQVL;Integrated Security=SSPI;Initial Catalog=TJ-Memo

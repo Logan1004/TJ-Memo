@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED65AD65-7F89-4214-918D-41118D34A943}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TJ_Memo</RootNamespace>
+    <AssemblyName>TJ-Memo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>..\..\..\Downloads\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MaterialSkin.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MemoBLL\LocationCtrl.cs" />
+    <Compile Include="MemoBLL\TreeHoleCtrl.cs" />
+    <Compile Include="MemoBLL\UserCtrl.cs" />
+    <Compile Include="MemoModel\SinaAddress.cs" />
+    <Compile Include="MemoUI\Middle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\Middle.Designer.cs">
+      <DependentUpon>Middle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoBLL\AddCtrl.cs" />
+    <Compile Include="MemoBLL\LoginCtrl.cs" />
+    <Compile Include="MemoBLL\MainCtrl.cs" />
+    <Compile Include="MemoDAL\MemoDAL.cs" />
+    <Compile Include="MemoModel\Event.cs" />
+    <Compile Include="MemoModel\User.cs" />
+    <Compile Include="MemoUI\PersonalCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\PersonalCenter.Designer.cs">
+      <DependentUpon>PersonalCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoUI\UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\UserRegister.Designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoUI\MemoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\MemoMain.Designer.cs">
+      <DependentUpon>MemoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemoUI\Weather_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemoUI\Weather_Form.Designer.cs">
+      <DependentUpon>Weather_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\TJMemo_Weather\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="Web References\cn.com.webxml.www\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MemoUI\Middle.resx">
+      <DependentUpon>Middle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoUI\PersonalCenter.resx">
+      <DependentUpon>PersonalCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoUI\UserRegister.resx">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoUI\MemoMain.resx">
+      <DependentUpon>MemoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoUI\Weather_Form.resx">
+      <DependentUpon>Weather_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\TJMemo_Weather\WeatherWebService.wsdl" />
+    <None Include="Web References\cn.com.webxml.www\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cn.com.webxml.www\WeatherWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TJMemo_Weather\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TJMemo_Weather\WeatherWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TJMemo_Weather\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TJMemo_Weather\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TJMemo_Weather\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cn.com.webxml.www\</RelPath>
+      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TJ_Memo_cn_com_webxml_www_WeatherWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\cn.com.webxml.www\WeatherWebService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
