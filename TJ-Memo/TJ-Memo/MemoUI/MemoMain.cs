@@ -13,15 +13,15 @@ using TJ_Memo.MemoModel;
 
 namespace TJ_Memo.MemoUI
 {
-    public partial class MemoMain : MaterialForm
+    public partial class MemoMain : Form
     {
         public MemoMain()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            //var materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             //this.BackgroundImage = Image.FromFile("D:\\PROGRAM\\STEAM\\steamapps\\workshop\\content\\431960\\828722349\\preview.jpg");
 
         }
@@ -31,18 +31,20 @@ namespace TJ_Memo.MemoUI
 
             DateTime date = monthCalendar1.SelectionStart;
             Utils.curDate = date;
-            materialLabel1.Text = date.ToShortDateString();
+            label4.Text = date.ToShortDateString();
             AddCtrl.ShowNotes(listView1, date, Utils.name);
             //checkbox List
             MainCtrl.AddCheckListBox(checkedListBox1, Utils.curDate, Utils.name);
             MainCtrl.ShowReminder(Utils.name, listView2);
+            axWindowsMediaPlayer1.URL = Environment.CurrentDirectory + "\\陈奕迅-十年.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             DateTime date = monthCalendar1.SelectionStart;
             Utils.curDate = date;
-            materialLabel1.Text = date.ToShortDateString();
+            label4.Text = date.ToShortDateString();
             AddCtrl.ShowNotes(listView1, date, Utils.name);
         }
 
@@ -112,7 +114,7 @@ namespace TJ_Memo.MemoUI
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            materialLabel2.Text = string.Format(DateTime.Now.ToLongTimeString());
+            label5.Text = string.Format(DateTime.Now.ToLongTimeString());
             DateTime date = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             String title = MainCtrl.Judge(date);
             if (title!="")
@@ -159,6 +161,34 @@ namespace TJ_Memo.MemoUI
         private void materialLabel2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddCtrl.AddReminder(Utils.name, textBox2.Text, dateTimePicker1.Value);
+            MainCtrl.ShowReminder(Utils.name, listView2);
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Middle m = new Middle();
+            this.Hide();
+            m.ShowDialog();
         }
 
        

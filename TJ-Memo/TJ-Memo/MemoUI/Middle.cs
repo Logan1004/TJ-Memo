@@ -26,11 +26,19 @@ namespace TJ_Memo.MemoUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Weather_Form weather = new Weather_Form();
+            WeatherForm weather = new WeatherForm();
+            this.Hide();
             weather.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            PersonalCenter pc = new PersonalCenter();
+            this.Hide();
+            pc.ShowDialog();
+        }
+
+        private void Middle_Load(object sender, EventArgs e)
         {
 
         }

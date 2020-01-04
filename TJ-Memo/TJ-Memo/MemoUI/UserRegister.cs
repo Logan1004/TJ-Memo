@@ -18,6 +18,19 @@ namespace TJ_Memo.MemoUI
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l = new Login();
+            l.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             if (textBox1.Text == "")
             {
                 MessageBox.Show("用户名不能为空，请重新输入");
@@ -30,12 +43,25 @@ namespace TJ_Memo.MemoUI
             }
             else
             {
-                MemoBLL.UserCtrl.AddUser(textBox1.Text, textBox2.Text);
-                MessageBox.Show("注册成功，请返回登录。");
-                this.Hide();
-
+                if (MemoDAL.MemoDAL.usernameCheck(textBox1.Text))
+                {
+                    MessageBox.Show("用户名已存在，请重新输入");
+                    textBox1.Focus();
+                }
+                else
+                {
+                    string password = MemoBLL.UserCtrl.passwordEncryption(textBox2.Text);
+                    MemoBLL.UserCtrl.AddUser(textBox1.Text, password);
+                    MessageBox.Show("注册成功，请返回登录。");
+                }
             }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l = new Login();
+            l.ShowDialog();
         }
     }
 }

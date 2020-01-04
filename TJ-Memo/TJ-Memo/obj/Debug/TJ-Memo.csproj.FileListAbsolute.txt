@@ -16,8 +16,8 @@ C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\Interop.WMPLib.dll
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\TJ-Memo.csproj.ResolveComReference.cache
-C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\TJ_Memo.Weather_Form.resources
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\bin\Debug\CSkin.dll
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\bin\Debug\CSkin.xml
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\TJ_Memo.MemoUI.Middle.resources
 C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\TJ_Memo.MemoUI.PersonalCenter.resources
+C:\Users\Rampike\Desktop\TJ-Memo\TJ-Memo\obj\Debug\TJ_Memo.WeatherForm.resources

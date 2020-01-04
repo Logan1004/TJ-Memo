@@ -10,14 +10,15 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using TJ_Memo.MemoBLL;
 using TJ_Memo.MemoModel;
+using TJ_Memo.MemoUI;
 
 
 
 namespace TJ_Memo
 {
-    public partial class Weather_Form : Form
+    public partial class WeatherForm : Form
     {
-        public Weather_Form()
+        public WeatherForm()
         {
             InitializeComponent();
         }
@@ -64,8 +65,8 @@ namespace TJ_Memo
             }
             List<Object[]> list = TreeHoleCtrl.SelectAll();
             Random rd = new Random();
-            int numberone = rd.Next(0, list.Count - 1);
-            textBox1.Text = list[numberone][0].ToString();
+           // int numberone = rd.Next(0, list.Count - 1);
+            // textBox1.Text = list[numberone][0].ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -89,6 +90,13 @@ namespace TJ_Memo
             Random rd = new Random();
             int numberone = rd.Next(0, list.Count-1);
             textBox1.Text = list[numberone][0].ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Middle m = new Middle();
+            this.Hide();
+            m.ShowDialog();
         }
     }
 }

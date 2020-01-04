@@ -23,6 +23,33 @@ namespace TJ_Memo.MemoDAL
             conn.ConnectionString = line;
         }
 
+        public static Boolean passwordChanged(string oldpassword, string newpassword)
+        {
+            User u=MemoDAL.userCheck(Utils.name, oldpassword);
+            if (u == null) return false;
+            else
+            {
+
+                string sql = "update MemoUser set password='" + newpassword + "' "+"where username='" + Utils.name + "'";                   
+                OleDbCommand cmd = new OleDbCommand(sql, conn);
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery(); 
+                }
+                catch (OleDbException ex)
+                {
+                    string s = ex.Message;
+                    MessageBox.Show(s, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close(); 
+                }
+                return true;
+            }
+        }
+
         public static User userCheck(string username,string password)
         {
             string sql = "select * from MemoUser where username='" + username;
@@ -59,6 +86,28 @@ namespace TJ_Memo.MemoDAL
             }
             return null;  
   
+        }
+
+        public static Boolean usernameCheck(string username)  //注册时检查用户名是否已存在
+        {
+            string sql = "select * from MemoUser where username='" + username+"'";
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                OleDbDataReader dbReader = cmd.ExecuteReader();
+                return dbReader.HasRows;
+            }
+            catch (OleDbException ex)
+            {
+                string s = ex.Message;
+                MessageBox.Show(s, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return true;
         }
 
         public static void executeNonQuery(string sql)   //执行非查询
@@ -126,6 +175,9 @@ namespace TJ_Memo.MemoDAL
             {
                 for (int i = 0; i < ch.Length; i++)
                 { //     设置表头信息
+                    if (i == 0)
+                        lv.Columns.Add(ch[i], 50, HorizontalAlignment.Center);
+                    else
                     lv.Columns.Add(ch[i], 100, HorizontalAlignment.Center);
                 }
             }

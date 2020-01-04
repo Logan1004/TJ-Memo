@@ -72,6 +72,7 @@
     <Compile Include="MemoBLL\LocationCtrl.cs" />
     <Compile Include="MemoBLL\TreeHoleCtrl.cs" />
     <Compile Include="MemoBLL\UserCtrl.cs" />
+    <Compile Include="MemoBLL\VerificationCode.cs" />
     <Compile Include="MemoModel\SinaAddress.cs" />
     <Compile Include="MemoUI\Middle.cs">
       <SubType>Form</SubType>
@@ -109,14 +110,19 @@
     <Compile Include="MemoUI\MemoMain.Designer.cs">
       <DependentUpon>MemoMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemoUI\Weather_Form.cs">
+    <Compile Include="MemoUI\WeatherForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemoUI\Weather_Form.Designer.cs">
-      <DependentUpon>Weather_Form.cs</DependentUpon>
+    <Compile Include="MemoUI\WeatherForm.Designer.cs">
+      <DependentUpon>WeatherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\TJMemo_Weather\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,19 +149,14 @@
     <EmbeddedResource Include="MemoUI\MemoMain.resx">
       <DependentUpon>MemoMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemoUI\Weather_Form.resx">
-      <DependentUpon>Weather_Form.cs</DependentUpon>
+    <EmbeddedResource Include="MemoUI\WeatherForm.resx">
+      <DependentUpon>WeatherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
@@ -193,9 +194,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\preview.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\LOGO.png" />
@@ -239,6 +237,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\cn.com.webxml.www\WeatherWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\FUJI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BG2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BG3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BG4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\LOGO2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

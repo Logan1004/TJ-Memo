@@ -8,9 +8,7 @@ namespace TJ_Memo.MemoBLL
 {
     class LoginCtrl
     {
-        public static Boolean loginCheck(string username,string password)
-        {
-            return true;
-        }
+
+
     }
 }
